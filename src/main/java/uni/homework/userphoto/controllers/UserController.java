@@ -1,16 +1,13 @@
 package uni.homework.userphoto.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import uni.homework.userphoto.conf.SpringConfig;
+import org.springframework.web.bind.annotation.*;
 import uni.homework.userphoto.model.User;
 import uni.homework.userphoto.model.UserRequest;
 import uni.homework.userphoto.repositories.UserRepository;
+
+import java.util.List;
 
 /**
  * Created by khajvah on 12/10/17.
@@ -22,7 +19,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
     public String home() {
         return "API user endpoint.";
@@ -40,5 +37,11 @@ public class UserController {
 
         userRepository.insertOne(user);
         return user;
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @ResponseBody
+    public List<User> userSearch(@RequestParam String query) {
+        return userRepository.searchUsers(query);
     }
 }

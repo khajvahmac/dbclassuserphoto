@@ -1,5 +1,6 @@
 package uni.homework.userphoto.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -16,6 +17,7 @@ public class User {
     @Field("name")
     private String name;
     @Field("password")
+    @JsonIgnore
     private String password;
 
     public String getId() {
