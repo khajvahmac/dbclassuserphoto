@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import uni.homework.userphoto.repositories.impl.PhotoRepositoryImpl;
 import uni.homework.userphoto.repositories.impl.UserRepositoryImpl;
 
 /**
@@ -32,4 +33,8 @@ public class MongoConf {
         return new UserRepositoryImpl();
     }
 
+    @Bean
+    PhotoRepository photoRepository() {
+        return new PhotoRepositoryImpl();
+    }
 }
