@@ -23,6 +23,6 @@ public class PhotoRepositoryImpl implements PhotoRepository{
 
     @Override
     public List<Photo> searchPhotos(String tag) {
-        return mongoTemplate.find(new Query(Criteria.where("tag").regex(tag)), Photo.class);
+        return mongoTemplate.find(new Query(Criteria.where("tags").is(tag)), Photo.class);
     }
 }

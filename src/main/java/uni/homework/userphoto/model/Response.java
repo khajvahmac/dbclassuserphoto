@@ -1,8 +1,5 @@
 package uni.homework.userphoto.model;
 
-/**
- * Created by khajvah on 12/10/17.
- */
 public class Response<T>{
     private T data;
 

@@ -11,9 +11,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import uni.homework.userphoto.repositories.impl.PhotoRepositoryImpl;
 import uni.homework.userphoto.repositories.impl.UserRepositoryImpl;
 
-/**
- * Created by khajvah on 12/10/17.
- */
 @Configuration
 @EnableMongoRepositories
 public class MongoConf {

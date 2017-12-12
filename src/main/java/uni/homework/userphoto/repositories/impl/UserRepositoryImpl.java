@@ -9,9 +9,6 @@ import uni.homework.userphoto.repositories.UserRepository;
 
 import java.util.List;
 
-/**
- * Created by khajvah on 12/10/17.
- */
 public class UserRepositoryImpl implements UserRepository{
 
     @Autowired
